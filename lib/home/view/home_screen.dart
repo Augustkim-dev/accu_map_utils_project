@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
-  @override
+  final LatLng initLocation = LatLng(37.499805, 127.112249);
+
+  @override 
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(title: Text('Main Map'), backgroundColor: Colors.blue,),
-        body: Center(child: Text('Home Screen')),
+        body: GoogleMap(initialCameraPosition: CameraPosition(target: initLocation, zoom: 17),),
       ),
     );
   }
