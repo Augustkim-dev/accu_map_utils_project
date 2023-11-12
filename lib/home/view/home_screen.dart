@@ -6,12 +6,19 @@ class HomeScreen extends StatelessWidget {
 
   final LatLng initLocation = LatLng(37.499805, 127.112249);
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text('Main Map'), backgroundColor: Colors.blue,),
-        body: GoogleMap(initialCameraPosition: CameraPosition(target: initLocation, zoom: 17),),
+        appBar: AppBar(
+          title: Text('Main Map'),
+          backgroundColor: Colors.blue,
+        ),
+        body: GoogleMap(
+          initialCameraPosition: CameraPosition(target: initLocation, zoom: 17),
+          myLocationEnabled: true,
+          myLocationButtonEnabled: true,
+        ),
       ),
     );
   }
